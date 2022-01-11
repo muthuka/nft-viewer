@@ -11,7 +11,7 @@
         <!--About-->
         <scene sceneID="Xh5-8q-FC1">
             <objects>
-                <viewController id="tVE-pj-PeN" sceneMemberID="viewController">
+                <viewController id="tVE-pj-PeN" customClass="AboutViewController" customModule="NFT_Viewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IHg-J2-ihx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,15 +20,32 @@
                                 <rect key="frame" x="87" y="154" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NFT View or Scan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="nuc-CT-ZjH">
+                                <rect key="frame" x="121" y="290" width="172" height="26"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="CPD-5X-YkZ">
+                                <rect key="frame" x="173" y="324" width="69" height="18"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lp1-aF-ZWd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="About" id="XRb-2m-5Hd"/>
+                    <connections>
+                        <outlet property="versionText" destination="CPD-5X-YkZ" id="KuZ-dq-HH8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FP1-NX-uB7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1802.8985507246377" y="464.73214285714283"/>
+            <point key="canvasLocation" x="1664" y="1045"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aaM-Sy-FSL">
@@ -41,12 +58,72 @@
                     </tabBar>
                     <connections>
                         <segue destination="w8g-8f-CVV" kind="relationship" relationship="viewControllers" id="Xrg-ON-fw1"/>
+                        <segue destination="Spd-9v-bak" kind="relationship" relationship="viewControllers" id="R0F-gT-JSE"/>
                         <segue destination="9GE-p7-1Kd" kind="relationship" relationship="viewControllers" id="Dhr-h6-Vws"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zaf-Ue-biY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6" y="162"/>
+            <point key="canvasLocation" x="-964" y="473"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="Whf-Aa-GUh">
+            <objects>
+                <tableViewController id="YMq-9I-eqt" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="jyt-Uu-P3G">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Network" id="yhz-Nx-KT6">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" textLabel="sOS-07-Uo3" style="IBUITableViewCellStyleDefault" id="dNa-uF-YiB">
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dNa-uF-YiB" id="keF-F2-Ib6">
+                                            <rect key="frame" x="0.0" y="0.0" width="373.5" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Ropsten" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sOS-07-Uo3">
+                                                    <rect key="frame" x="20" y="0.0" width="345.5" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="VNt-hp-PKL" style="IBUITableViewCellStyleDefault" id="nXm-vW-DvU">
+                                        <rect key="frame" x="0.0" y="93" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nXm-vW-DvU" id="02U-xz-WPw">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Mainnet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VNt-hp-PKL">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="YMq-9I-eqt" id="Fau-nb-C3b"/>
+                            <outlet property="delegate" destination="YMq-9I-eqt" id="r9z-pl-zcx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="0UJ-Jo-DNU"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ukn-NO-b1I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1663.7681159420292" y="237.72321428571428"/>
         </scene>
         <!--NFT Scan or View-->
         <scene sceneID="kL4-FU-ZS3">
@@ -72,18 +149,61 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="NFT Scan or View" id="00P-Zt-qqg">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="z4w-Cm-eCj"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="z4w-Cm-eCj">
+                            <connections>
+                                <segue destination="gUS-OE-QVt" kind="show" id="W5a-al-iVe"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ajm-m3-Mly" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1802.8985507246377" y="-200.22321428571428"/>
+            <point key="canvasLocation" x="1823" y="-551"/>
+        </scene>
+        <!--Add-->
+        <scene sceneID="beB-fH-5vi">
+            <objects>
+                <viewController id="gUS-OE-QVt" customClass="AddNFTViewController" customModule="NFT_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tTG-aO-NSP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NFT ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6y-1g-yZ8">
+                                <rect key="frame" x="36" y="120" width="96" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Isl-34-sHF">
+                                <rect key="frame" x="36" y="162" width="343" height="34"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gUS-OE-QVt" id="Gqw-GZ-PaJ"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IdH-UT-w9h"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add" id="uke-fD-obF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="7DO-hw-HAE"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nftIdText" destination="Isl-34-sHF" id="wS4-VO-ck7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bRm-GI-DSs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2888" y="-551"/>
         </scene>
         <!--NFTs-->
         <scene sceneID="ghj-oU-cmb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w8g-8f-CVV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="NFTs" id="QfY-WJ-8mf"/>
+                    <tabBarItem key="tabBarItem" title="NFTs" image="icon_nfts" id="QfY-WJ-8mf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VRs-Na-6dh">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -96,13 +216,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xzW-m3-6t4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="892.75362318840587" y="-200.22321428571428"/>
+            <point key="canvasLocation" x="764" y="-551"/>
         </scene>
         <!--About-->
         <scene sceneID="0eA-Hx-kIe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9GE-p7-1Kd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="About" id="a7r-0F-Ca0"/>
+                    <tabBarItem key="tabBarItem" title="About" image="icon_about" id="a7r-0F-Ca0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q7Q-aX-wgt">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -115,11 +235,33 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7k7-3I-od3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="892.75362318840587" y="464.73214285714283"/>
+            <point key="canvasLocation" x="764" y="1045"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="AA3-rj-xcz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Spd-9v-bak" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="Wkh-tK-Qmf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bCl-hH-qt1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YMq-9I-eqt" kind="relationship" relationship="rootViewController" id="Tza-2G-bCX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V28-ht-EQN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="753.62318840579712" y="237.72321428571428"/>
         </scene>
     </scenes>
     <resources>
         <image name="Logo" width="1201" height="1201"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="icon_about" width="25" height="25"/>
+        <image name="icon_nfts" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

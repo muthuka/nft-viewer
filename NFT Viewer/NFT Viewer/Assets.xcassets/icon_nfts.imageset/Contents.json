@@ -1,0 +1,16 @@
+{
+  "images" : [
+    {
+      "idiom" : "iphone",
+      "filename" : "icon_nfts~iphone.pdf"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "icon_nfts~universal.pdf"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

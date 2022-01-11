@@ -1,0 +1,16 @@
+{
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "icon_about~universal.pdf"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "icon_about~iphone.pdf"
+    }
+  ]
+}
