@@ -3,7 +3,7 @@
 //  NFT Viewer
 //
 //  Created by Muthu Arumugam on 1/13/22.
-//
+//  This struct decode Json from the server side
 
 import Foundation
 
@@ -12,15 +12,17 @@ struct NFTMetadata: Decodable {
     var name: String
     var owner: String
     var symbol: String
-    var tokenJson: String
-//    var itemID: String
+
+    var tokenNo: String
+    var contract: String
 
     init() {
-        self.name = ""
         self.image = ""
+        self.name = ""
         self.owner = ""
         self.symbol = ""
-        self.tokenJson = ""
-//        self.itemID = "0"
+
+        self.tokenNo = "0"
+        self.contract = ""
     }
 }
