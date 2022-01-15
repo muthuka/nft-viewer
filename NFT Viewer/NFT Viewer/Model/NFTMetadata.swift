@@ -8,13 +8,13 @@
 import Foundation
 
 struct NFTMetadata: Decodable {
-    var image: String
-    var name: String
-    var owner: String
-    var symbol: String
+    var image = String()
+    var name = String()
+    var owner = String()
+    var symbol = String()
 
-    var tokenNo: String
-    var contract: String
+    var tokenNo = String()
+    var contract = String()
 
     init() {
         self.image = ""
