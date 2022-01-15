@@ -19,6 +19,7 @@
 		0031AD3427907AC700F84AA7 /* NFTListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031AD3327907AC700F84AA7 /* NFTListItemTableViewCell.swift */; };
 		00611CF4278D298900CB06AB /* AddNFTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00611CF3278D298900CB06AB /* AddNFTViewController.swift */; };
 		00611CF6278D338300CB06AB /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00611CF5278D338300CB06AB /* AboutViewController.swift */; };
+		00728D7727928CE300CA90AB /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 00728D7627928CE300CA90AB /* AlamofireImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0031AD29278FE78000F84AA7 /* Alamofire in Frameworks */,
+				00728D7727928CE300CA90AB /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +136,7 @@
 			name = "NFT Viewer";
 			packageProductDependencies = (
 				0031AD28278FE78000F84AA7 /* Alamofire */,
+				00728D7627928CE300CA90AB /* AlamofireImage */,
 			);
 			productName = "NFT Viewer";
 			productReference = 0023261B278D119400269FAF /* NFT Viewer.app */;
@@ -165,6 +168,7 @@
 			mainGroup = 00232612278D119400269FAF;
 			packageReferences = (
 				0031AD27278FE78000F84AA7 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				00728D7527928CE200CA90AB /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 			);
 			productRefGroup = 0023261C278D119400269FAF /* Products */;
 			projectDirPath = "";
@@ -348,7 +352,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 96573A62AT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "NFT Viewer/Info.plist";
@@ -377,7 +381,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 96573A62AT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "NFT Viewer/Info.plist";
@@ -432,6 +436,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		00728D7527928CE200CA90AB /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -439,6 +451,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0031AD27278FE78000F84AA7 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		00728D7627928CE300CA90AB /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00728D7527928CE200CA90AB /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

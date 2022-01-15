@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class ListNFTTableViewController: UITableViewController {
     
@@ -35,18 +37,18 @@ class ListNFTTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "nftItemCell") as? NFTListItemTableViewCell {
             let key = Array(allItems.keys)[indexPath.row];
+            print("Found \(key)")
+            
             let item: NFTMetadata = allItems[key]!;
+            print("Item found \(item)")
             cell.nftImage.image = UIImage(named: "Logo")!; // Load a temp one
             cell.nameOfNFT.text = item.name;
             cell.nftSymbol.text = item.symbol;
             cell.nftItemNumber.text = item.tokenNo;
             
-            let url = URL(string: item.image)
-
-            DispatchQueue.global().async {
-                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                DispatchQueue.main.async {
-                    cell.nftImage.image = UIImage(data: data!)
+            AF.request(item.image).responseImage { response in
+                if case .success(let image) = response.result {
+                    cell.nftImage.image = image
                 }
             }
             

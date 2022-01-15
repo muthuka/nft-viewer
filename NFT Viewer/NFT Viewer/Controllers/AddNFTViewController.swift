@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 
 class AddNFTViewController: UIViewController, UITextFieldDelegate {
 
@@ -14,7 +15,6 @@ class AddNFTViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nftIdText: UITextField!
     @IBOutlet weak var nftItemText: UITextField!
     @IBOutlet weak var previewImage: UIImageView!
-    @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var previewButton: UIButton!
     
@@ -45,7 +45,6 @@ class AddNFTViewController: UIViewController, UITextFieldDelegate {
     @IBAction func previewClicked(_ sender: Any) {
         // Download asset from the NFT Metadata
         self.previewImage.image = nil; // Clear it
-        self.progressBar.setProgress(0.0, animated: true)
         
         // Keyboard clear
         self.nftItemText.resignFirstResponder()
@@ -82,22 +81,15 @@ class AddNFTViewController: UIViewController, UITextFieldDelegate {
             self.loadedNFTJson = meta
             print("Got data \(meta.image)")
             
-            AF.download(meta.image)
-                .downloadProgress { progress in
-                    let progressString = String(format:"%.2f", progress.fractionCompleted)
-                    self.progressBar.setProgress(Float(progressString)!, animated: true)
-                    print("Progress: \(progressString)")
-                }
-                .responseData { response in
-                    if let data = response.value {
-                        let image = UIImage(data: data)
-                        self.previewImage.image = image
-                    }
+            AF.request(meta.image).responseImage { response in
+                if case .success(let image) = response.result {
+                    self.previewImage.image = image
                     
                     // Reset controls
                     self.spinner.stopAnimating()
                     self.previewButton.isEnabled = true
                 }
+            }            
         }
     }
 }

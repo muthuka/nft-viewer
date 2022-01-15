@@ -253,10 +253,6 @@
                                 <rect key="frame" x="36" y="384" width="343" height="234"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ziy-AQ-5H6">
-                                <rect key="frame" x="132" y="372" width="150" height="4"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </progressView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="nuA-RH-HNX">
                                 <rect key="frame" x="197" y="301" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -277,7 +273,6 @@
                         <outlet property="nftItemText" destination="ycQ-jV-ykn" id="N3c-Y0-xvO"/>
                         <outlet property="previewButton" destination="j7h-nB-uI7" id="uBk-je-TU2"/>
                         <outlet property="previewImage" destination="7fu-jB-2hB" id="0ZI-R5-8OX"/>
-                        <outlet property="progressBar" destination="Ziy-AQ-5H6" id="BpK-Rx-MDb"/>
                         <outlet property="spinner" destination="nuA-RH-HNX" id="cDV-6j-eB8"/>
                     </connections>
                 </viewController>
