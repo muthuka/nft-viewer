@@ -15,10 +15,12 @@ class AddNFTViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nftItemText: UITextField!
     @IBOutlet weak var previewImage: UIImageView!
     @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var previewButton: UIButton!
     
     // To return values
-    var callback : (([NFTMetadata]) -> Void)?
-    var loadedNFTJson: [NFTMetadata] = []
+    var callback : ((NFTMetadata) -> Void)?
+    var loadedNFTJson: NFTMetadata = NFTMetadata()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +52,9 @@ class AddNFTViewController: UIViewController, UITextFieldDelegate {
         self.nftIdText.resignFirstResponder()
         
         // Return value reset
-        self.loadedNFTJson = []
+        self.loadedNFTJson = NFTMetadata()
+        self.spinner.startAnimating();
+        self.previewButton.isEnabled = false
         
         getNFTImage(contract: self.nftIdText.text!, tokenId: self.nftItemText.text!)
     }
@@ -58,6 +62,7 @@ class AddNFTViewController: UIViewController, UITextFieldDelegate {
     func getNFTImage(contract: String, tokenId: String) {
         let urlPath: String = "https://nft-fetcher-js.herokuapp.com/nft/info?addr=\(contract)&tok=\(tokenId)";
         print("Start downloading \(urlPath)")
+        
         AF.request(urlPath).responseDecodable(of: NFTMetadata.self) { (response) in
             guard let meta = response.value else {
                 let alert = UIAlertController(title: "Error", message: "Decoding Error!", preferredStyle: UIAlertController.Style.alert)
@@ -66,11 +71,15 @@ class AddNFTViewController: UIViewController, UITextFieldDelegate {
                 self.present(alert, animated: true, completion: nil)
                 
                 print("Error decoding...")
+                
+                // Reset controls
+                self.spinner.stopAnimating()
+                self.previewButton.isEnabled = true
+                
                 return
             }
             
-            self.loadedNFTJson = [meta]
-//            self.loadedNFTJson[0].itemID = self.nftItemText.text!
+            self.loadedNFTJson = meta
             print("Got data \(meta.image)")
             
             AF.download(meta.image)
@@ -84,6 +93,10 @@ class AddNFTViewController: UIViewController, UITextFieldDelegate {
                         let image = UIImage(data: data)
                         self.previewImage.image = image
                     }
+                    
+                    // Reset controls
+                    self.spinner.stopAnimating()
+                    self.previewButton.isEnabled = true
                 }
         }
     }
