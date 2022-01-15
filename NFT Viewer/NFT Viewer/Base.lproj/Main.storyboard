@@ -125,7 +125,7 @@
             </objects>
             <point key="canvasLocation" x="1663.7681159420292" y="237.72321428571428"/>
         </scene>
-        <!--NFT Scan or View-->
+        <!--NFT Viewer-->
         <scene sceneID="kL4-FU-ZS3">
             <objects>
                 <tableViewController id="Ktv-rh-r6I" customClass="ListNFTTableViewController" customModule="NFT_Viewer" customModuleProvider="target" sceneMemberID="viewController">
@@ -185,7 +185,7 @@
                             <outlet property="delegate" destination="Ktv-rh-r6I" id="ksQ-5I-rv8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="NFT Scan or View" id="00P-Zt-qqg">
+                    <navigationItem key="navigationItem" title="NFT Viewer" id="00P-Zt-qqg">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="z4w-Cm-eCj">
                             <connections>
                                 <action selector="addClickedButton:" destination="Ktv-rh-r6I" id="KWr-E7-lol"/>
@@ -257,6 +257,10 @@
                                 <rect key="frame" x="132" y="372" width="150" height="4"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </progressView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="nuA-RH-HNX">
+                                <rect key="frame" x="197" y="301" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IdH-UT-w9h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -271,8 +275,10 @@
                     <connections>
                         <outlet property="nftIdText" destination="Isl-34-sHF" id="wS4-VO-ck7"/>
                         <outlet property="nftItemText" destination="ycQ-jV-ykn" id="N3c-Y0-xvO"/>
+                        <outlet property="previewButton" destination="j7h-nB-uI7" id="uBk-je-TU2"/>
                         <outlet property="previewImage" destination="7fu-jB-2hB" id="0ZI-R5-8OX"/>
                         <outlet property="progressBar" destination="Ziy-AQ-5H6" id="BpK-Rx-MDb"/>
+                        <outlet property="spinner" destination="nuA-RH-HNX" id="cDV-6j-eB8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRm-GI-DSs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

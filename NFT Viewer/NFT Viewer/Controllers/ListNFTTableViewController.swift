@@ -9,7 +9,7 @@ import UIKit
 
 class ListNFTTableViewController: UITableViewController {
     
-    var allItems: [NFTMetadata] = []
+    var allItems = [String: NFTMetadata]();
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,8 @@ class ListNFTTableViewController: UITableViewController {
     // MARK: - Table view
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "nftItemCell") as? NFTListItemTableViewCell {
-            let item: NFTMetadata = allItems[indexPath.row];
+            let key = Array(allItems.keys)[indexPath.row];
+            let item: NFTMetadata = allItems[key]!;
             cell.nftImage.image = UIImage(named: "Logo")!; // Load a temp one
             cell.nameOfNFT.text = item.name;
             cell.nftSymbol.text = item.symbol;
@@ -69,7 +70,8 @@ class ListNFTTableViewController: UITableViewController {
             viewControllerB.callback = { message in
                 //Do what you want in here!
                 print(message)
-                self.allItems.append(contentsOf: message)
+                let key = message.contract + ":" + message.tokenNo;
+                self.allItems[key] = message
                 self.tableView .reloadData()
             }
         }
