@@ -59,7 +59,10 @@ class AddNFTViewController: UIViewController, UITextFieldDelegate {
     }
     
     func getNFTImage(contract: String, tokenId: String) {
-        let urlPath: String = "https://nft-fetcher-js.herokuapp.com/nft/info?addr=\(contract)&tok=\(tokenId)";
+        let userDefault = UserDefaults.standard
+        let networkSettings = userDefault.string(forKey: "network")
+        
+        let urlPath: String = "https://nft-fetcher-js.herokuapp.com/nft/info?addr=\(contract)&tok=\(tokenId)&network=\(String(networkSettings!))";
         print("Start downloading \(urlPath)")
         
         AF.request(urlPath).responseDecodable(of: NFTMetadata.self) { (response) in
@@ -81,15 +84,26 @@ class AddNFTViewController: UIViewController, UITextFieldDelegate {
             self.loadedNFTJson = meta
             print("Got data \(meta.image)")
             
-            AF.request(meta.image).responseImage { response in
-                if case .success(let image) = response.result {
-                    self.previewImage.image = image
-                    
-                    // Reset controls
-                    self.spinner.stopAnimating()
-                    self.previewButton.isEnabled = true
+            if (meta.image.isEmpty || meta.image.count == 0) {
+                // Reset controls
+                self.spinner.stopAnimating()
+                self.previewButton.isEnabled = true
+                
+                let alert = UIAlertController(title: "Error", message: "Invalid token URI", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (_) in
+                     }))
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                AF.request(meta.image).responseImage { response in
+                    if case .success(let image) = response.result {
+                        self.previewImage.image = image
+                        
+                        // Reset controls
+                        self.spinner.stopAnimating()
+                        self.previewButton.isEnabled = true
+                    }
                 }
-            }            
+            }
         }
     }
 }

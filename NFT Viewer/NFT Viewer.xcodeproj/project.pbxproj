@@ -19,6 +19,7 @@
 		0031AD3427907AC700F84AA7 /* NFTListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031AD3327907AC700F84AA7 /* NFTListItemTableViewCell.swift */; };
 		00611CF4278D298900CB06AB /* AddNFTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00611CF3278D298900CB06AB /* AddNFTViewController.swift */; };
 		00611CF6278D338300CB06AB /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00611CF5278D338300CB06AB /* AboutViewController.swift */; };
+		0062FAA32792ED30002A8652 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0062FAA22792ED30002A8652 /* SettingsTableViewController.swift */; };
 		00728D7727928CE300CA90AB /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 00728D7627928CE300CA90AB /* AlamofireImage */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		0031AD3327907AC700F84AA7 /* NFTListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTListItemTableViewCell.swift; sourceTree = "<group>"; };
 		00611CF3278D298900CB06AB /* AddNFTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNFTViewController.swift; sourceTree = "<group>"; };
 		00611CF5278D338300CB06AB /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		0062FAA22792ED30002A8652 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				00611CF3278D298900CB06AB /* AddNFTViewController.swift */,
 				00611CF5278D338300CB06AB /* AboutViewController.swift */,
 				0031AD2D2790637100F84AA7 /* ListNFTTableViewController.swift */,
+				0062FAA22792ED30002A8652 /* SettingsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				00611CF6278D338300CB06AB /* AboutViewController.swift in Sources */,
 				00232621278D119400269FAF /* SceneDelegate.swift in Sources */,
 				0031AD312790664A00F84AA7 /* NFTMetadata.swift in Sources */,
+				0062FAA32792ED30002A8652 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,7 +356,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 96573A62AT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "NFT Viewer/Info.plist";
@@ -381,7 +385,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 96573A62AT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "NFT Viewer/Info.plist";
