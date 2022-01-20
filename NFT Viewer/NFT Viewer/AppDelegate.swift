@@ -13,7 +13,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Check for "Network" settings
+        let userDefault = UserDefaults.standard
+        if let networkSettings = userDefault.string(forKey: "network") {
+            print("Found network: \(networkSettings)")
+        } else {
+            userDefault.set("ropsten", forKey: "network")
+        }
+        
         return true
     }
 
