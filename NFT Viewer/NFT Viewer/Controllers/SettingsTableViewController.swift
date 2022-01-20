@@ -17,6 +17,10 @@ class SettingsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    var sectionTitles = ["NETWORK"];
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionTitles[section];
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
