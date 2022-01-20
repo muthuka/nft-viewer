@@ -4,7 +4,7 @@ Simple Viewer for NFTs in Ethereum. This swift iOS app allows you to call in rop
 
 ## Screenshots
 
-![List Screen](https://github.com/muthuka/nft-viewer/blob/main/assets/screenshots/list-screen.png))
-![Add Screen](https://github.com/muthuka/nft-viewer/blob/main/assets/screenshots/add-screen.png))
-![Settings Screen](https://github.com/muthuka/nft-viewer/blob/main/assets/screenshots/settings-screen.png))
-![About Screen](https://github.com/muthuka/nft-viewer/blob/main/assets/screenshots/about-screen.png))
+<img src="https://github.com/muthuka/nft-viewer/blob/main/assets/screenshots/list-screen.png" align="left" height="320"/>
+<img src="https://github.com/muthuka/nft-viewer/blob/main/assets/screenshots/add-screen.png" align="left" height="320"/>
+<img src="https://github.com/muthuka/nft-viewer/blob/main/assets/screenshots/settings-screen.png" align="left" height="320"/>
+<img src="https://github.com/muthuka/nft-viewer/blob/main/assets/screenshots/about-screen.png" align="left" height="320"/>
